@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import SiteCarousel from '../SiteCarousel';
+import VehicleBrowser from '../VehicleBrowser';
+
 
 class Home extends React.Component{
     
@@ -12,6 +14,7 @@ class Home extends React.Component{
         return(
             <div>
                 <SiteCarousel />
+                <VehicleBrowser />
             </div>
         );
     }
