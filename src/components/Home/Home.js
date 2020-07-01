@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import SiteCarousel from '../SiteCarousel';
 
 class Home extends React.Component{
     
@@ -8,7 +9,11 @@ class Home extends React.Component{
     }
 
     render(){
-        return( <h4>This is Home Component</h4>);
+        return(
+            <div>
+                <SiteCarousel />
+            </div>
+        );
     }
 }
 
