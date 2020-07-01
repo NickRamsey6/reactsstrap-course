@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
 import TopNav from './components/TopNav';
-
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -25,6 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <TopNav />
+        <Home />
       </div>
     );
     } else {
