@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Axios from 'axios';
+import TopNav from './components/TopNav';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {vehicleData: null};
+  }
+  componentDidMount(){
+    Axios.get("http://localhost:3001/vehicles")
+    .then(res => {
+      console.log(res.data);
+      this.setState({vehicleData: res.data})
+    })
+    .catch(err => console.log(err));
+}
+
+  render(){
+    if(this.state.vehicleData){
+    return (
+      <div className="App">
+        <TopNav />
+      </div>
+    );
+    } else {
+      return <h4>Loading Data...</h4>;
+    }
+  }
 }
 
 export default App;
