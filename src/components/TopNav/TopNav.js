@@ -24,19 +24,16 @@ import {
 
         return(<div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Flying Car Dealership</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="/"><i className="fas fa-home"></i> Home</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
+              <DropdownToggle nav caret><i className="fas fa-space-shuttle"> </i>
+                Flying Cars
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
@@ -51,8 +48,13 @@ import {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            <NavItem>
+              <NavLink href='/find-a-dealer'><i className="fas fa-map-marker-alt"></i> Find a Dealer</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='/build-and-price'><i className="fas fa-cog"></i> Build and Price</NavLink>
+            </NavItem>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>);
