@@ -13,6 +13,7 @@ class Home extends React.Component{
     render(){
         return(
             <div>
+                <p>Test</p>
                 <SiteCarousel />
                 <VehicleBrowser />
             </div>
