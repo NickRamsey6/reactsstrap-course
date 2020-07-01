@@ -3,6 +3,7 @@ import './App.css';
 import Axios from 'axios';
 import TopNav from './components/TopNav';
 import Home from './components/Home';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
       <div className="App">
         <TopNav />
         <Home />
+        <Footer />
       </div>
     );
     } else {
