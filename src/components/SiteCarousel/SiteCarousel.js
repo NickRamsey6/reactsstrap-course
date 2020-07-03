@@ -6,7 +6,7 @@ import {
     CarouselControl,
     CarouselIndicators,
     CarouselCaption
-} from 'reactstrap';
+    } from 'reactstrap';
 
 
 class SiteCarousel extends React.Component {
@@ -55,7 +55,7 @@ class SiteCarousel extends React.Component {
                     key={item.carouselImage}
                 >
                     <a href={"/detail/" + item.detailKey}>
-                        <img src={item.carouselImage} classname={"carouselImage"} alt={item.altText} />
+                        <img src={item.carouselImage} className={"carouselImage"} alt={item.altText} />
                     </a>
                     <CarouselCaption captionText="" captionHeader="" />
                 </CarouselItem>

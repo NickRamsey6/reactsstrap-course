@@ -15,7 +15,7 @@ class Home extends React.Component{
             return(
                 <div>
                     <SiteCarousel vehicleData ={this.props.vehicleData} />
-                    <VehicleBrowser />
+                    <VehicleBrowser vehicleData ={this.props.vehicleData} />
                 </div>
             );
         } else {
