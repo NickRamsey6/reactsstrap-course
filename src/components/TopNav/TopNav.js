@@ -12,21 +12,41 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
   } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 
-// class TopNav extends React.Component {
-   const TopNav = (props) => {
-        const [isOpen, setIsOpen] = useState(false);
-      
-        const toggle = () => setIsOpen(!isOpen);
+class TopNav extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  render(){
+    
+        const VehicleSelections = this.props.vehicleData.map((item) => {
+          return <DropdownItem key={item.detailKey}>
+            <Link to={{pathname: "/detail/" + item.detailKey}}>
+              {item.model}
+            </Link>
+          </DropdownItem>
+        }, this);
 
         return(<div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Flying Car Dealership</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="/"><i className="fas fa-home"></i> Home</NavLink>
@@ -36,16 +56,7 @@ import {
                 Flying Cars
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
+               {VehicleSelections}
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
@@ -59,5 +70,6 @@ import {
       </Navbar>
     </div>);
     }
+}  
 
 export default TopNav;
