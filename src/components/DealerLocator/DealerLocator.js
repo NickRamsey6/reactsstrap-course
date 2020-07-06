@@ -42,6 +42,8 @@ class DealerLocator extends React.Component {
 
     render(){
         if(this.state.dealerships){
+            const filteredStubData = this.state.dealerships.filter( d => 
+                d.state.includes(this.state.searchTerm));
             let searchBar = <div>
                 <h1>Over {this.state.dealerships.length} Authorized Dealers Nationwide</h1>
                 <Row>
@@ -62,7 +64,41 @@ class DealerLocator extends React.Component {
                 </Row>
             </div>
 
-            return(<div>{searchBar}</div>);
+            return(<div>
+                {searchBar}
+
+                <Row>
+                    <Col sm={12} md={{size: 10, offset: 1}}>
+                        <Table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Dealership</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Zipcode</th>
+                                    <th>Phone Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {filteredStubData.map( (item, i) => {
+                                    return(<tr key={item.phone}>
+                                        <td>{String(i)}</td>
+                                        <td>{item.dealershipName}</td>
+                                        <td>{item.address}</td>
+                                        <td>{item.city}</td>
+                                        <td>{item.state}</td>
+                                        <td>{item.zip}</td>
+                                        <td>{item.phone}</td>
+                                    </tr>)
+                                })}
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+
+                </div>);
         } else {
             return null
         }
