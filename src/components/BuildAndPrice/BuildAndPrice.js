@@ -120,7 +120,6 @@ class BuildAndPrice extends React.Component {
             Color
           </NavLink>
         </NavItem>
-      </Nav>
       <NavItem>
           <NavLink
             className={classnames({ active: this.state.activeTab === '3' })}
@@ -129,6 +128,7 @@ class BuildAndPrice extends React.Component {
             Powerplant
           </NavLink>
         </NavItem>
+      </Nav>  
       <TabContent activeTab={this.state.activeTab}>
         <TabPane tabId="1">
           <Row>
@@ -136,7 +136,7 @@ class BuildAndPrice extends React.Component {
               <ModelPicker
                 vehicleData = {this.props.vehicleData}
                 selectedVehicle = {this.props.selectedVehicle}
-                selectVehicle = {this.selectedVehicle} />
+                selectVehicle = {this.selectVehicle} />
             </Col>
           </Row>
         </TabPane>

@@ -30,7 +30,7 @@ class ModelPickerCollapse extends React.Component {
         return (<div className="clickableMedia">
         <Media>
             <Media left href="#">
-                <Media object data-src={vehicle.thumbnail} alt={vehicle.model} />
+                <Media object className="vehicleImage" src={vehicle.thumbnail} alt={vehicle.model} />
             </Media>
             <Media body>
                 <Media heading>
