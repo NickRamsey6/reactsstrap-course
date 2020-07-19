@@ -72,7 +72,14 @@ class BuildAndPrice extends React.Component {
     }
 
     selectEngine(eventData){
-        //TODO:  this method will store the user's engine selection
+        const selected = eventData.target.dataset.engine;
+        const engineCost = eventData.target.dataset.engineCost;
+        const engineName = eventData.target.dataset.engineName;
+        this.setState({
+          selectedEngine: Number(selected),
+          selectedEngineName: engineName,
+          engineCost: engineCost
+        })
     }
 
     toggleModal(){
@@ -160,7 +167,11 @@ class BuildAndPrice extends React.Component {
         <TabPane tabId="3">
           <Row>
           <Col sm="12">
-              <h4>Engine Picker Goes Here</h4>
+              <EnginePicker
+                  vehicleData = {this.props.vehicleData}
+                  onEngineSelect = {this.selectEngine}
+                  selectedVehicle = {this.state.selectedVehicle}
+                  selectedEngine = {this.state.selectedEngine} />
             </Col>
           </Row>
         </TabPane>
