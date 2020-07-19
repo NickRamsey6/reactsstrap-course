@@ -20,7 +20,6 @@ import {
     ModalBody,
     ModalFooter,
     Button,
-    Progress
 } from 'reactstrap';
 
 

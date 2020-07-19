@@ -1,6 +1,6 @@
 import React from 'react';
-import { Alert, InputGroup, InputGroupAddon, InputGroupText, Card, CardText, CardBody, CardTitle,
-CardSubtitle, Button, Form, FormGroup, Label, Input, FormText
+import { Alert, InputGroup, InputGroupAddon, Card, CardText, CardBody, CardTitle,
+CardSubtitle, Button, Form, FormGroup, Input
 } from 'reactstrap';
 import Axios from 'axios';
 

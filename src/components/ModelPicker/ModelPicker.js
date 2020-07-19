@@ -6,9 +6,6 @@ import {
     Col
 } from 'reactstrap';
 class ModelPicker extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (<div>

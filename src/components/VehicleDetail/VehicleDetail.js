@@ -15,7 +15,7 @@ class VehicleDetail extends React.Component{
         return(<div>
             <Row>
                 <Col>
-                    <img className = "detailImage" src = {selectedVehicleData.thumbnail} />
+                    <img className = "detailImage" src = {selectedVehicleData.thumbnail} alt='' />
                 </Col>
             </Row>
             <Row>
