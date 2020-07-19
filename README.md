@@ -8,6 +8,8 @@ I completed this 6.5 hour course from Packt publishing on utlizing HTML, ES6, Re
 
 ### `git clone https://github.com/NickRamsey6/reactstrap-course.git`
 
+Clone the repository
+
 ### `npm install faker`
 
 Utilize faker to mock a database of dealer locations
