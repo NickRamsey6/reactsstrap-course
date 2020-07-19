@@ -78,12 +78,13 @@ class BuildAndPrice extends React.Component {
         this.setState({
           selectedEngine: Number(selected),
           selectedEngineName: engineName,
-          engineCost: engineCost
+          engineCost: engineCost,
+          modal: true
         })
     }
 
     toggleModal(){
-        //TODO:  this method controls showing and hiding the modal form displayed at the end
+        this.setState({modal: !this.state.modal});
     }
 
     computePrice(){
@@ -176,7 +177,15 @@ class BuildAndPrice extends React.Component {
           </Row>
         </TabPane>
       </TabContent>
-
+      <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
+        <ModalHeader toggle={this.toggleModal}>Schedule a test flight</ModalHeader>
+        <ModalBody>
+          <TestFlightForm />
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={this.toggleModal}>Done</Button>{' '}
+        </ModalFooter>
+      </Modal>
     </div>);
     }
 }
