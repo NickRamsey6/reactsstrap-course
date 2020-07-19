@@ -66,7 +66,7 @@ class BuildAndPrice extends React.Component {
         const selectedColorName = eventData.target.dataset.colorName;
         this.setState({
           activeTab: '3',
-          selectedColor: Number(2),
+          selectedColor: Number(selected),
           selectedColorName: selectedColorName
         });
     }
