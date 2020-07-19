@@ -18,7 +18,7 @@ class ModelPicker extends React.Component {
                         return <ModelPickerCollapse
                             key={"model-picker-" + vehicle.detailKey}
                             selectedVehicle={vehicle}
-                            selectVehicle={this.props.selectedVehicle}
+                            selectVehicle={this.props.selectVehicle}
                             />
                     }, this)}
                 </Col>
